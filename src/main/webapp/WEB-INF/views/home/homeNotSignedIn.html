@@ -11,6 +11,7 @@
 </head>
 <body>
 <div th:replace="fragments/header :: header">Header</div>
+<div th:replace="fragments/leftmenu :: leftmenu">&nbsp;</div>
 <div class="container">
     <div class="row" style="margin: 8px;">
         <div class="col-4" style="text-align: center;">
@@ -59,13 +60,13 @@
 //                                divisor: 2
 //                            })
 //                        }
-
+                        var arrayStatistics = JSON.parse("[" + getData() + "]");
                         var data = {
                             // A labels array that can contain any sort of values
                             labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
                             // Our series array that contains series objects or in this case series data arrays
                             series: [
-                                [5, 2, 4, 2, 0]
+                                arrayStatistics
                             ]
                         };
 
@@ -73,6 +74,17 @@
                         // that is resolving to our chart container element. The Second parameter
                         // is the actual data object.
                         new Chartist.Line('.ct-chart', data);
+
+                        function getData(){
+                            var xhr = new XMLHttpRequest();
+                            xhr.open('POST', '/statistics', false);
+                            xhr.send();
+                            if (xhr.status != 200) {
+                                alert( xhr.status + ': ' + xhr.statusText );
+                            } else {
+                                return xhr.responseText;
+                            }
+                        }
                     </script>
 
                 </div>
@@ -89,7 +101,7 @@
                              rel="stylesheet"
                              media="screen"
                              style="width: 18px; height: 18px; vertical-align: middle;" />
-                        <a href="#">Buddies</a>
+                        <a href="/buddies">Buddies</a>
                     </div>
                 </div>
 
@@ -101,7 +113,7 @@
                              rel="stylesheet"
                              media="screen"
                              style="width: 18px; height: 18px; vertical-align: middle;" />
-                        <a href="#" style="color: #ffad10;">Groups</a>
+                        <a href="/groups" style="color: #ffad10;">Groups</a>
                     </div>
                 </div>
 
@@ -113,7 +125,7 @@
                              rel="stylesheet"
                              media="screen"
                              style="width: 18px; height: 18px; vertical-align: middle;" />
-                        <a href="#" style="color: #99cc33;">Events</a>
+                        <a href="/events" style="color: #99cc33;">Events</a>
                     </div>
                 </div>
 
@@ -125,7 +137,7 @@
                              rel="stylesheet"
                              media="screen"
                              style="width: 18px; height: 18px; vertical-align: middle;" />
-                        <a href="#" style="color: #1983cd;">Challenges</a>
+                        <a href="/challenges" style="color: #1983cd;">Challenges</a>
                     </div>
                 </div>
             </div>
