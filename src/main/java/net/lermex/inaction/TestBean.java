@@ -1,6 +1,5 @@
 package net.lermex.inaction;
 
-
 import org.springframework.stereotype.Component;
 
 @Component
