@@ -4,9 +4,9 @@
 <head>
     <title>InAction</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../../resources/js/jquery-latest.js"></script>
     <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js" />
-
+    <script src="../../../resources/js/functions.js" th:src="@{/resources/js/functions.js}" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" />
     <link href="../../../resources/css/all.css" rel="stylesheet" media="screen" th:href="@{/resources/css/all.css}" />
 </head>
@@ -96,13 +96,14 @@
             <div class="row" style="text-align: center;">
                 <div class="col-3">
                     <div class="panel">
-
+                        <div id="content"/>
                         <img src="../../../resources/images/user3.png"
                              th:src="@{/resources/images/user3.png}"
                              rel="stylesheet"
                              media="screen"
-                             style="width: 18px; height: 18px; vertical-align: middle;" />
-                        <a href="/buddies">Buddies</a>
+                             style="width: 18px; height: 18px; vertical-align: middle;"/>
+                        <a href="#" id="buddies">Buddies</a>
+                        <div id="buddiesDiv" style="visibility: hidden">buddiesDiv</div>
                     </div>
                 </div>
 
@@ -114,7 +115,8 @@
                              rel="stylesheet"
                              media="screen"
                              style="width: 18px; height: 18px; vertical-align: middle;" />
-                        <a href="/groups" style="color: #ffad10;">Groups</a>
+                        <a href="#" id="groups">Groups</a>
+                        <div id="groupsDiv" style="visibility: hidden">groupsDiv</div>
                     </div>
                 </div>
 
@@ -126,7 +128,8 @@
                              rel="stylesheet"
                              media="screen"
                              style="width: 18px; height: 18px; vertical-align: middle;" />
-                        <a href="/events" style="color: #99cc33;">Events</a>
+                        <a href="#" id="events">Events</a>
+                        <div id="eventsDiv" style="visibility: hidden">eventsDiv</div>
                     </div>
                 </div>
 
@@ -138,7 +141,8 @@
                              rel="stylesheet"
                              media="screen"
                              style="width: 18px; height: 18px; vertical-align: middle;" />
-                        <a href="/challenges" style="color: #1983cd;">Challenges</a>
+                        <a href="#" id="challenges">Challenges</a>
+                        <div id="challengesDiv" style="visibility: hidden">challengesDiv</div>
                     </div>
                 </div>
             </div>
