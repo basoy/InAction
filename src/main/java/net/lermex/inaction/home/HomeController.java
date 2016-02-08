@@ -18,6 +18,7 @@ public class HomeController {
 
         final ModelAndView mav = new ModelAndView("home/homeNotSignedIn");
         mav.addObject("customers", "test");
+        mav.addObject("graphic", "[5,4,2,0]");
         return mav;
     }
 

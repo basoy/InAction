@@ -50,7 +50,6 @@
                     </p>
 
                     <div class="ct-chart ct-perfect-fourth"></div>
-
                     <script>
 //                        var options = {
 //                            // Don't draw the line chart points
@@ -66,7 +65,8 @@
                             labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
                             // Our series array that contains series objects or in this case series data arrays
                             series: [
-                                arrayStatistics
+                                //arrayStatistics
+                                graphic
                             ]
                         };
 
@@ -95,14 +95,12 @@
             <div class="row" style="text-align: center;">
                 <div class="col-3">
                     <div class="panel">
-                        <div id="content"/>
                         <img src="../../../resources/images/user3.png"
                              th:src="@{/resources/images/user3.png}"
                              rel="stylesheet"
                              media="screen"
                              style="width: 18px; height: 18px; vertical-align: middle;"/>
                         <a href="#" id="buddies">Buddies</a>
-                        <div id="buddiesDiv" style="visibility: hidden">buddiesDiv</div>
                     </div>
                 </div>
 
@@ -115,7 +113,6 @@
                              media="screen"
                              style="width: 18px; height: 18px; vertical-align: middle;" />
                         <a href="#" id="groups">Groups</a>
-                        <div id="groupsDiv" style="visibility: hidden">groupsDiv</div>
                     </div>
                 </div>
 
@@ -128,7 +125,6 @@
                              media="screen"
                              style="width: 18px; height: 18px; vertical-align: middle;" />
                         <a href="#" id="events">Events</a>
-                        <div id="eventsDiv" style="visibility: hidden">eventsDiv</div>
                     </div>
                 </div>
 
@@ -141,9 +137,9 @@
                              media="screen"
                              style="width: 18px; height: 18px; vertical-align: middle;" />
                         <a href="#" id="challenges">Challenges</a>
-                        <div id="challengesDiv" style="visibility: hidden">challengesDiv</div>
                     </div>
                 </div>
+                <div id="content" style="color: white"/>
             </div>
             <div class="panel">
                 <div class="news-item">
@@ -167,4 +163,32 @@
     <div th:replace="fragments/footer :: footer">&copy; 2015 InAction Developers</div>
 </div>
 </body>
+<div id="b1" style="color: white; display: none">
+    <div>
+        <span class="news-item__name">Smith Hithard</span>
+        <span class="news-item__date">19 Aug at 3:27 pm</span>
+    </div>
+    <span>Anyone up for a hike this weekend?</span>
+</div>
+<div id="g1" style="color: white; display: none">
+    <div>
+        <span class="news-item__name">Simon Swiftleg</span>
+        <span class="news-item__date">20 Aug at 9:11 am</span>
+    </div>
+    <span>Just finished my first 5k. Best feeling ever!</span>
+</div>
+<div id="e1" style="color: white; display: none">
+    <div>
+        <span class="news-item__name">Jane Hithard</span>
+        <span class="news-item__date">21 Aug at 3:27 pm</span>
+    </div>
+    <span>Anyone up for a hike this weekend?</span>
+</div>
+<div id="c1" style="color: white; display: none">
+    <div>
+        <span class="news-item__name">Vasya Swiftleg</span>
+        <span class="news-item__date">20 Aug at 9:11 am</span>
+    </div>
+    <span>Just finished my first 5k. Best feeling ever!</span>
+</div>
 </html>
